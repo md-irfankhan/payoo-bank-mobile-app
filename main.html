@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,85 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <main class="flex justify-center">
-        <div class="mockup-phone">
-            <div class="mockup-phone-camera"></div>
-            <div class="mockup-phone-display bg-white grid place-content-center">
-               
+    <main class="flex justify-center" id="main">
+        <div id="d1" class="mockup-phone">
+            <div id="d2" class="mockup-phone-camera"></div>
+            <div id="d3" class="mockup-phone-display bg-white grid place-content-center">
+                <div class="stats bg-base-100 border-base-300 border">
+                    <div class="stat">
+                        <div class="stat-title">Account balance</div>
+                        <div class="stat-value">$ <span id="balance">990</span></div>
+                        <div class="stat-actions">
+                            <button class="btn btn-xs btn-success">Add funds</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="join">
+                    <button class="btn join-item" id="add-money-open">Add Money</button>
+                    <button class="btn join-item" id="cash-out-money-open">Cash Out</button>
+                    <button class="btn join-item" id="transiction-open">Transaction History</button>
+                </div>
+
+                <div class="add-money flex justify-center my-4" id="add-money">
+                    <form>
+                        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                            <legend class="fieldset-legend">Add Money</legend>
+
+                            <label class="label">Amount</label>
+                            <input type="number" id="add-money-amount" class="input" placeholder="Type Amount" />
+
+                            <label class="label">Pin</label>
+                            <input type="password" id="add-money-pin" class="input" placeholder="Type Pin" />
+
+                            <button id="add-money-btn" class="btn btn-neutral mt-4">Add Money</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="add-money flex justify-center my-4 hidden" id="cash-out-money">
+                    <form>
+                        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                            <legend class="fieldset-legend">Cash Out</legend>
+
+                            <label class="label">Amount</label>
+                            <input type="number" id="cash-out-money-amount" class="input" placeholder="Type Amount" />
+
+                            <label class="label">Pin</label>
+                            <input type="password" id="cash-out-money-pin" class="input" placeholder="Type Pin" />
+
+                            <button id="cash-out-money-btn" class="btn btn-neutral mt-4">Cash Out</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div>
+                    <ul class="list bg-base-100 rounded-box shadow-md hidden my-4" id="transiction">
+
+                        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Transiction History</li>
+
+                        <!-- <li class="list-row">
+                            <div class="text-4xl font-thin opacity-30 tabular-nums">01</div>
+                            
+                            <div class="list-col-grow">
+                                <div>Dio Lupa</div>
+                                <div class="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>
+                            </div>
+                            
+                        </li> -->
+
+                    </ul>
+                </div>
             </div>
-        </div>
+
+
+
     </main>
- <script src="./js/utilities.js"></script>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/addMoney.js"></script>
+    <script src="./js/cashOut.js"></script>
+    <script src="./js/transiction.js"></script>
 </body>
+
 </html>
